@@ -1,5 +1,18 @@
-extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+  table.table
+    thead
+      tr
+        th Student Number
+        th First Name
+        th Last Name
+        th Email Address
+    tbody
+      each student in students
+        tr
+          td= student.studentNumber
+          td= student.firstName
+          td= student.lastName
+          td= student.emailAddress
+
+  a.btn.btn-primary(href='/students/new') Add New Student
+
